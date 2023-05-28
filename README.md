@@ -22,6 +22,9 @@ You can then find any product you have added via the POST call using the GET end
 http://localhost:8000/api/products/search?query=
 
 2. Open the frontend folder which is a simple create-react-app that allows the users to create and search prodcuts.
+
+In a new terminal window
+
 First: Use command: "npm install" to install all node modules / dependencies. 
 Then to run this, use the command: npm start
 

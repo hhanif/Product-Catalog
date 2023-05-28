@@ -4,7 +4,7 @@ API / web app that allows users to create products and search over them.
 This a barebones React web-application using Node and Express.js to create the API endpoints. 
 To use this:
 
-1. Open up my-app which is the server-side code in server.js. To run this, 
+1. Open up backend which is the server-side code in server.js. To run this, 
 First: Use command: "npm install" to install all node modules / dependencies. 
 
 Then, use the command: node server.js

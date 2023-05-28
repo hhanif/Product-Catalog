@@ -22,12 +22,12 @@ app.post('/api/products', (req, res) => {
 // API endpoint for searching products
 app.get('/api/products/search', (req, res) => {
   const query = req.query.query.toLowerCase();
-  const results = products.filter(
-    (product) =>
-      product.name.toLowerCase().includes(query) ||
-      product.category.toLowerCase().includes(query) ||
-      product.sku.toLowerCase().includes(query)
-  );
+  const searchTerms = query.split(' ').filter(term => term !== ''); // Split query into individual search terms
+  const results = products.filter(product => {
+    const { name, category, sku } = product;
+    const productTerms = `${name} ${category} ${sku}`.toLowerCase().split(' ');
+    return searchTerms.every(searchTerm => productTerms.some(productTerm => productTerm.includes(searchTerm)));
+  });
   res.json(results);
 });
 
